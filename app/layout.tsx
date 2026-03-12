@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import Navbar from './components/navbar';
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,11 +25,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    /*
+      The layoutis used to wrap all pages in the app. Must have children in the props and it renders the page.tx
+      The root must have an html and body tag. 
+      You can add global styles to this file, and also add shared components like a navbar or footer.
+      
+    */
     <html lang="en">
+      <head>
+        <title>GOT API</title>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Navbar />
+        <div className="flex justify-between items-center py-10">
+          <main className="container lg:w-1/2 md:w-full mx-auto">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );
