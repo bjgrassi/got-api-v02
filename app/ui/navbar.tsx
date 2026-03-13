@@ -21,7 +21,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/characters"
-            className={`mr-4 ${pathname === '/characters' ? 'text-blue-400' : 'text-white'}`}
+            className={`mr-4 ${pathname === '/characters' || pathname.startsWith('/characters/') ? 'text-blue-400' : 'text-white'}`}
           >
             Characters
           </Link>

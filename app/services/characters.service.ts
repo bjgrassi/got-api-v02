@@ -24,6 +24,12 @@ export async function getCharacters(): Promise<Character[]> {
     return data;
 }
 
+export function getSlicedCharacters(characters: Character[], page: number, itemsPerPage: number): Character[] {
+    const initialIndex = (page - 1) * itemsPerPage;
+    const finalIndex = page * itemsPerPage;
+    return characters.slice(initialIndex, finalIndex);
+}
+
 export async function getCharacter(id: string): Promise<Character> {
     const response = await fetch(`${CHARACTER_API}/${id}`)
 
