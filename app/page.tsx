@@ -8,19 +8,24 @@ export default async function Home() {
   const firstCharacter = charactersData[0];
 
   return (
-    <div>
-      <h1 className="text-5xl font-bold">
+    <div aria-labelledby="welcome-heading">
+      <h1 id="welcome-heading" className="text-5xl font-bold">
         Welcome to Game of Thrones Website!
       </h1>
-      <div className="grid grid-cols-3 gap-4 py-10">
-        <div key={firstCharacter.id} className="max-w-sm rounded-lg shadow-md bg-white p-6">
-          <img className="mx-auto block rounded-full" src={firstCharacter.imageUrl} alt={firstCharacter.fullName} />
+      <div 
+        aria-describedby="content-description"
+        className="grid grid-cols-3 gap-4 py-10">
+        <div 
+          key={firstCharacter.id} 
+          className="max-w-sm rounded-lg shadow-md bg-white p-6"
+          aria-label="Page preview of characters page">
+          <img className="mx-auto block rounded-full" src={firstCharacter.imageUrl} alt={`This character calls ${firstCharacter.fullName}`} />
           <h5 className="mb-2 text-xl font-semibold text-gray-900">Characters</h5>
-          <p className="mb-4 text-gray-600">
+          <p id="content-description" className="mb-4 text-gray-600">
             List of Characters and details
           </p>
-          <a href="/characters" className="inline-block rounded-md bg-blue-600 py-2 px-4 text-sm text-white hover:bg-blue-700">
-            Check out
+          <a role="button" href="/characters" className="inline-block rounded-md bg-blue-600 py-2 px-4 text-sm text-white hover:bg-blue-700">
+            See list
           </a>
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function RootLayout({
     */
     <html lang="en">
       <head>
-        <title>GOT API</title>
+        <title>Fetching GOT API</title>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

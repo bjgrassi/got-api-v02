@@ -17,7 +17,7 @@ export default function CharactersList({ characters }: { characters: any[] }) {
 
   return (
     <div>
-      <h1 className="text-5xl font-bold">
+      <h1 className="text-5xl font-bold" aria-label="List of characters">
         Characters
       </h1>
       <Suspense fallback={'loading...'}>
